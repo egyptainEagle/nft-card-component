@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet"> 
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      --soft-blue: hsla(215, 51%, 70%,0.5);
+    }
+    body{
+      background: hsl(217, 54%, 11%);
+      margin:0;
+    }
+    header{
+      height: 50px;
+      background:hsl(216, 50%, 16%);
+    }
+    .header__header-logo{
+      width:fit-content;
+      display: block;
+      height: 100%;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      text-decoration: none;
+      color:white;
+    }
+    .header-logo__img{
+      width: 40px;
+      border-radius: 50%;
+    }
+    .header-logo__visit-btn{
+      border: none;
+      background:hsl(215, 51%, 30%);
+      color:white;
+      font-family: Outfit,sans-serif;
+      padding: 0.5em;      
+      cursor: pointer;
+    }
+    .main__title{
+      margin: 1.5em auto;
+      width: 90%;
+      text-align: center;
+
+      color:white;
+      font-family: Outfit,sans-serif;
+      letter-spacing: 0.2em;
+      word-spacing: 0.4em;
+       
+    }
+    main{
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .main__component{
+      box-sizing: border-box;
+      width: 375px;
+      padding: 1.5%;
+      background: hsl(216, 50%, 16%);
+      height: fit-content;
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+      "img img"
+      "title title"
+      "description description"
+      "price deadline"
+      "creator creator";
+      row-gap: 0;
+    }
+    .component__img{
+      width: 100%;
+      border-radius: 10px;
+      grid-area: img;
+    }
+    
+    .component__title{
+      color: white;
+      font-family: Outfit,sans-serif;
+      grid-area: title;
+    }
+    .component__description{
+      color:var(--soft-blue);
+      font-family: Outfit,sans-serif;
+      grid-area: description;
+      margin-top: 0;
+      font-size: 1.2em;
+      margin-bottom: 0;
+
+    }
+    .component__price{
+      grid-area: price;
+      color: hsl(178, 100%, 50%);
+      font-family: Outfit, sans-serif;
+     display: flex;
+      font-size: 1em;
+      align-self: center;     
+      column-gap: 0.4em;
+      
+    }
+    .component__price::before{
+       content: url("images/icon-ethereum.svg");
+       align-self: flex-start;     
+    }
+    .component__deadline{
+      grid-area: deadline;
+      color: hsl(215, 51%, 70%);
+      font-family: Outfit, sans-serif;
+     display: flex;
+      font-size: 1.1em;
+      column-gap: 0.3em;
+      font-weight: 400;
+      justify-self: end;
+    }
+    .component__deadline::before{
+      content: url("images/icon-clock.svg");
+       align-self: flex-end;
+       display:inline-block;
+    }
+    .component__creator-group{
+      height: fit-content;
+      padding: 0.5em 0;
+      border-top: hsl(215, 32%, 27%) 1px solid;
+      grid-area: creator;
+      color: var(--soft-blue);
+      font-family: Outfit, sans-serif;
+      display: flex;
+      align-items: center;
+    }
+    .component__creator-group *{
+      font-weight: 400;
+      font-size:1.2em;
+    }
+    .creator-group__img{
+       width: 40px;
+       border: white 2px solid;
+       border-radius: 50%;
+       margin-right: 20px
+    }
+    .creator-group__creator-name{
+      color:White;
+      margin-left:0.3em;
+    }
+    footer{
+      background:hsl(216, 50%, 16%);
+      margin-top: 5vh;
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      word-spacing: 0.5em;
+      font-size: 1.5rem;
+      font-family: Outfit,sans-serif;
+      color:white;
+    }
+    .footer__logo{
+      display: inline-flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+    .attribution a { color: gray; text-decoration: none; }
+   .component__img:hover, .component__title:hover,.creator-group__creator-name:hover{
+     cursor: pointer;
+   } 
+  </style>
+</head>
+<body>
+  <header>
+    <a class="header__header-logo" href="https://www.frontendmentor.io/profile/egyptainEagle" target="_blank">
+      <img class="header-logo__img" src="https://d.top4top.io/p_2213ygqzy1.png">
+      <button class="header-logo__visit-btn">Visit My Profile</button>
+    </a>
+  </header>
+  <h1 class="main__title">Responsive NFT Card Component</h1>
+
+  <main>
+   <div class="main__component">
+     <img class="component__img" src="images/image-equilibrium.jpg">
+     <h2 class="component__title">Equilibrium #3429</h2>
+     <p class="component__description">Our Equilibrium collection promotes balance and calm.</p>
+     <h3 class="component__price">0.041 ETH</h3>
+     <h3 class="component__deadline">3 days left</h3>
+     <div class="component__creator-group">
+       <img class="creator-group__img" src="images/image-avatar.png">
+       <h4 class="creator-group__title">Creation of</h4>
+       <span class="creator-group__creator-name">Jules Wyvern </span>
+     </div>
+    </div>
+  </main>
+
+  <footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> 
+    Coded by <a href="https://www.frontendmentor.io/profile/egyptainEagle" class="footer__logo"><img class="header-logo__img" src="https://d.top4top.io/p_2213ygqzy1.png"> Shihab Ali</a>
+  </div> 
+  </footer>
+</body>
+</html>
